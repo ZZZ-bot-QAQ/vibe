@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>智排 · 车辆生产智能助手</title>
+<style>
+:root{--bg:#f4f7f6;--card:#fff;--ink:#14201d;--muted:#71807a;--line:#e4ebe8;--green:#16a67c;--green2:#e6f7f1;--blue:#4e83ee;--red:#e45c67;--amber:#d39a28;--shadow:0 16px 45px rgba(25,45,39,.065)}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(135deg,#f8faf9,#edf5f2);color:var(--ink);font:14px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}.app{min-height:100vh}.side{position:fixed;left:0;top:0;bottom:0;width:230px;background:rgba(255,255,255,.88);backdrop-filter:blur(20px);border-right:1px solid var(--line);padding:22px 14px;z-index:3}.brand{display:flex;gap:10px;align-items:center;padding:2px 9px 25px}.logo{width:40px;height:40px;border-radius:13px;background:linear-gradient(135deg,#18aa80,#83dcc2);color:#fff;display:grid;place-items:center;font-weight:900;font-size:18px}.brand b{font-size:16px}.brand small{display:block;color:var(--muted);font-size:10px}.nav{display:grid;gap:5px}.nav button{border:0;background:none;text-align:left;padding:11px 12px;border-radius:10px;color:#697670;cursor:pointer}.nav button:hover,.nav button.on{background:var(--green2);color:#087958;font-weight:700}.bottom{position:absolute;bottom:20px;left:25px;color:#84918d;font-size:11px}.main{margin-left:230px;padding:25px 34px 60px;max-width:1550px}header{display:flex;justify-content:space-between;align-items:center;color:var(--muted);margin-bottom:25px}.actions{display:flex;gap:8px}.btn{border:1px solid var(--line);background:#fff;color:var(--ink);padding:9px 13px;border-radius:9px;cursor:pointer}.btn.primary{background:var(--green);border-color:var(--green);color:#fff;box-shadow:0 7px 20px rgba(22,166,124,.18)}.hero{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:20px}.hero h1{font-size:29px;letter-spacing:-.8px;margin:0 0 4px}.hero p{margin:0;color:var(--muted)}.pill,.tag{display:inline-block;padding:4px 9px;border-radius:20px;font-size:10px;background:var(--green2);color:#087958}.tag.amber{background:#fff5dc;color:#9a6c11}.tag.red{background:#ffeff0;color:#bd4650}.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;margin-top:13px}.card{background:rgba(255,255,255,.92);border:1px solid var(--line);border-radius:16px;padding:17px;box-shadow:var(--shadow)}.metric small{color:var(--muted)}.metric strong{display:block;font-size:26px;margin:5px 0}.good{color:var(--green)}.warn{color:var(--amber)}.bad{color:var(--red)}.sub{font-size:11px;color:var(--muted)}.title{display:flex;justify-content:space-between;align-items:center;margin-bottom:13px}.rows{display:grid;gap:8px}.row{display:flex;justify-content:space-between;align-items:center;padding:10px;background:#f7faf9;border-radius:9px}.formgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.field label{font-size:11px;color:var(--muted)}.field input,.field select{display:block;width:100%;margin-top:5px;padding:9px;border:1px solid var(--line);border-radius:8px;background:#fbfcfc;outline:0}.field input:focus,.field select:focus{border-color:#69c7ad}.section{margin-top:14px}.table{width:100%;border-collapse:collapse}.table th,.table td{text-align:left;padding:11px 8px;border-bottom:1px solid var(--line);font-size:12px}.table th{color:var(--muted);font-size:11px}.weights{display:grid;gap:10px}.weight{display:grid;grid-template-columns:100px 1fr 48px;gap:10px;align-items:center}.range{height:6px;border-radius:10px;background:#e7efec;position:relative}.range i{position:absolute;left:0;top:0;height:100%;background:var(--green);border-radius:10px}.weight input{width:100%;accent-color:var(--green)}.strategy{display:flex;gap:7px;flex-wrap:wrap}.strategy button{border:1px solid var(--line);background:#fff;border-radius:20px;padding:7px 11px;cursor:pointer}.strategy button.on{background:var(--green2);border-color:#bce8dc;color:#087958;font-weight:700}.schedule{display:grid;grid-template-columns:65px 1fr;gap:7px}.machine{color:var(--muted);padding:10px 2px}.track{display:flex;gap:5px;background:#f5f8f7;padding:5px;border-radius:9px;min-height:42px}.job{display:flex;align-items:center;padding:0 9px;border-radius:7px;font-size:10px;font-weight:700}.j1{background:#d7f3e9;color:#087958}.j2{background:#dce8ff;color:#376ac1}.j3{background:#fff0c6;color:#966b10}.j4{background:#f0ddff;color:#7a4aa5}.analysis{display:grid;gap:10px}.reason{border-left:3px solid var(--red);padding:11px 13px;background:#fff7f7;border-radius:8px}.reason b{color:#a9414a}.solution{border-left:3px solid var(--green);padding:11px 13px;background:#f2faf7;border-radius:8px}.chart{height:175px;display:flex;align-items:end;gap:8px}.bar{flex:1;background:#8ddbc3;border-radius:6px 6px 2px 2px;min-height:12px}.bar:hover{transform:translateY(-4px)}.chat{min-height:500px;display:flex;flex-direction:column}.messages{flex:1;display:grid;align-content:start;gap:9px;overflow:auto}.bubble{max-width:84%;padding:11px 13px;border-radius:12px;background:#eef7f4}.bubble.me{justify-self:end;background:#e2f6ef}.inputbar{display:flex;gap:7px;margin-top:12px}.inputbar input{flex:1;border:1px solid var(--line);border-radius:9px;padding:11px;outline:0}.steps{display:grid;grid-template-columns:repeat(6,1fr);gap:7px}.step{padding:10px;background:#f6f9f8;border-radius:9px;text-align:center;color:var(--muted);font-size:11px}.step.active{background:var(--green2);color:#087958;font-weight:700}.notice{padding:11px 13px;border-radius:10px;background:#f7faf9;color:#5f6d68;font-size:12px}.modal{position:fixed;inset:0;background:rgba(20,30,27,.28);backdrop-filter:blur(5px);display:grid;place-items:center;z-index:10}.modalbox{width:min(720px,94vw);max-height:90vh;overflow:auto;background:#fff;border-radius:18px;padding:20px;box-shadow:0 25px 80px rgba(0,0,0,.16)}.modalhead{display:flex;justify-content:space-between;align-items:center;margin-bottom:15px}.close{border:0;background:none;cursor:pointer}.toast{position:fixed;right:22px;bottom:22px;background:#163d33;color:#fff;padding:10px 14px;border-radius:9px;z-index:11}.progress{height:7px;background:#e8efec;border-radius:10px;overflow:hidden}.progress i{display:block;height:100%;background:var(--green);border-radius:10px}@media(max-width:1050px){.grid4{grid-template-columns:repeat(2,1fr)}.grid3{grid-template-columns:1fr}.formgrid{grid-template-columns:1fr 1fr}.steps{grid-template-columns:repeat(3,1fr)}}@media(max-width:700px){.side{width:70px}.brand div:not(.logo),.nav span,.bottom{display:none}.main{margin-left:70px;padding:20px}.grid4,.formgrid{grid-template-columns:1fr}.hero,header{flex-direction:column;align-items:flex-start;gap:12px}.weight{grid-template-columns:75px 1fr 40px}}
+</style>
+</head>
+<body>
+<div class="app">
+<aside class="side">
+<div class="brand"><div class="logo">智</div><div><b>智排</b><small>车辆生产智能助手</small></div></div>
+<nav class="nav">
+<button class="on" data-page="1">① <span>生产总览</span></button>
+<button data-page="2">② <span>生产数据</span></button>
+<button data-page="3">③ <span>智能排程</span></button>
+<button data-page="4">④ <span>异常分析</span></button>
+<button data-page="5">⑤ <span>每日分析</span></button>
+<button data-page="6">⑥ <span>AI 助手</span></button>
+</nav>
+<div class="bottom">● 系统正常<br>本地运行</div>
+</aside>
+<main class="main">
+<header><div>车辆工厂 / <strong id="crumb">生产总览</strong></div><div class="actions"><button class="btn" id="dataBtn">＋ 手动输入</button><button class="btn primary" id="aiBtn">AI 帮我分析</button></div></header>
+<div id="content"></div>
+</main></div>
+<div id="modal"></div><div id="toast"></div>
+<script>
+const content=document.getElementById('content'),crumb=document.getElementById('crumb');
+const nav=[...document.querySelectorAll('.nav button')];
+let data={
+orders:[
+{no:'1001',model:'电动 SUV',qty:120,priority:90,due:'今天 14:30',risk:'高',reason:'M01 停机 + 同类型订单冲突'},
+{no:'1002',model:'家用 SUV',qty:80,priority:75,due:'今天 17:00',risk:'中',reason:'原材料库存偏低'},
+{no:'1003',model:'轿车',qty:150,priority:55,due:'今天 19:30',risk:'低',reason:'暂无明显问题'},
+{no:'1004',model:'电动 SUV',qty:60,priority:85,due:'今天 16:00',risk:'高',reason:'M03 效率下降'}
+],
+machines:[
+{no:'M01',name:'冲压 1 号',status:'故障',use:48,health:32,reason:'上午 10:00-12:00 停机'},
+{no:'M02',name:'冲压 2 号',status:'正常',use:91,health:94,reason:'正常'},
+{no:'M03',name:'焊装 1 号',status:'偏低',use:62,health:71,reason:'材料供应慢'},
+{no:'M04',name:'涂装 1 号',status:'正常',use:88,health:95,reason:'正常'},
+{no:'M05',name:'总装 1 号',status:'正常',use:94,health:97,reason:'正常'}
+],
+materials:[
+{name:'电池包',stock:180,need:210,days:'0.9 天',state:'不足'},
+{name:'车身钢板',stock:680,need:520,days:'2.6 天',state:'正常'},
+{name:'座椅',stock:310,need:300,days:'2.1 天',state:'正常'},
+{name:'轮胎',stock:420,need:390,days:'2.0 天',state:'正常'}
+],
+weights:{delivery:40,cost:25,capacity:20,material:15},
+strategy:'综合考虑'
+};
+function page(n){
+nav.forEach(x=>x.classList.toggle('on',x.dataset.page==n));
+const names={1:'生产总览',2:'生产数据',3:'智能排程',4:'异常分析',5:'每日分析',6:'AI 助手'};crumb.textContent=names[n];
+({1:dashboard,2:dataPage,3:schedule,4:anomaly,5:daily,6:copilot}[n])();
+}
+nav.forEach(x=>x.onclick=()=>page(x.dataset.page));
+function hero(t,p,b=''){return `<div class="hero"><div><h1>${t}</h1><p>${p}</p></div>${b?`<span class="pill">${b}</span>`:''}</div>`}
+function metric(a,b,c,cls='good'){return `<div class="card metric"><small>${a}</small><strong>${b}</strong><span class="sub ${cls}">${c}</span></div>`}
+function dashboard(){
+content.innerHTML=hero('生产总览','今天生产得怎么样，重要信息一眼就能看到。','实时更新')+
+`<div class="grid4">${metric('今日订单',data.orders.length+' 个','有 2 个需要重点关注')}${metric('预计按时交付','94.1%','↑ 比昨天高 3.7%')}${metric('设备利用率','84.6%','↑ 比昨天高 5.2%')}${metric('延期风险','2 个','↓ 可通过调整降低')}</div>
+<div class="grid3">
+<div class="card"><div class="title"><b>今日生产安排</b><span class="sub">当前方案</span></div>${miniSchedule()}</div>
+<div class="card"><div class="title"><b>原材料</b><span class="sub">库存情况</span></div><div class="rows">${data.materials.map(m=>`<div class="row"><span>${m.name}</span><span class="tag ${m.state==='不足'?'red':''}">${m.stock} / 需要 ${m.need}</span></div>`).join('')}</div></div>
+<div class="card"><div class="title"><b>AI 今天的建议</b><span class="tag">已分析</span></div><div class="solution"><b>先处理订单 1001</b><p>原因：M01 故障，同时电池包库存偏低。建议把部分任务转给 M02，并优先补充电池包。</p><button class="btn primary" onclick="page(3)">重新安排</button></div><div class="reason" style="margin-top:9px"><b>注意 M03</b><p>今天上午材料供应慢，利用率下降。建议把材料提前送到设备旁。</p></div></div></div>`;
+}
+function miniSchedule(){return `<div class="rows">${[['M01','暂停','red'],['M02','电动 SUV → 1001',''],['M03','家用 SUV → 1002',''],['M04','轿车 → 1003',''],['M05','电动 SUV → 1004','']].map(x=>`<div class="row"><b>${x[0]}</b><span class="tag ${x[2]}">${x[1]}</span></div>`).join('')}</div>`}
+function dataPage(){
+content.innerHTML=hero('生产数据','把今天的数据填进去，系统会自动帮你看风险和安排生产。')+
+`<div class="card"><div class="title"><b>订单</b><button class="btn" onclick="addOrder()">＋ 添加订单</button></div><table class="table"><thead><tr><th>编号</th><th>车型</th><th>数量</th><th>重要程度</th><th>交付时间</th><th>延期风险</th><th>原因</th></tr></thead><tbody>${data.orders.map(o=>`<tr><td><b>${o.no}</b></td><td>${o.model}</td><td>${o.qty}</td><td>${o.priority}</td><td>${o.due}</td><td><span class="tag ${o.risk==='高'?'red':o.risk==='中'?'amber':''}">${o.risk}</span></td><td>${o.reason}</td></tr>`).join('')}</tbody></table></div>
+<div class="grid3 section"><div class="card"><div class="title"><b>设备状态</b><span class="sub">可以手动修改</span></div><div class="rows">${data.machines.map(m=>`<div class="row"><span><b>${m.no}</b> ${m.name}</span><span class="tag ${m.status==='故障'?'red':m.status==='偏低'?'amber':''}">${m.status} · ${m.use}%</span></div>`).join('')}</div></div>
+<div class="card"><div class="title"><b>原材料库存</b><span class="sub">今天</span></div><div class="rows">${data.materials.map(m=>`<div class="row"><span>${m.name}</span><span class="tag ${m.state==='不足'?'red':''}">${m.state}</span></div>`).join('')}</div></div>
+<div class="card"><div class="title"><b>当前情况</b><span class="sub">系统自动判断</span></div><div class="notice">预计按时交付 <b class="good">94.1%</b><br>设备平均利用 <b>84.6%</b><br>需要注意的订单 <b class="bad">2 个</b></div></div></div>`;
+}
+function addOrder(){
+document.getElementById('modal').innerHTML=`<div class="modal"><div class="modalbox"><div class="modalhead"><b>添加订单</b><button class="close" onclick="closeModal()">✕</button></div><div class="formgrid">
+<div class="field"><label>订单编号<input id="no" value="1005"></label></div><div class="field"><label>车型<input id="model" value="电动 SUV"></label></div><div class="field"><label>数量<input id="qty" type="number" value="100"></label></div><div class="field"><label>交付时间<input id="due" value="明天 10:00"></label></div>
+<div class="field"><label>重要程度<input id="pri" type="number" min="0" max="100" value="80"></label></div></div><div class="notice" style="margin-top:12px">保存后，系统会自动检查：设备够不够、材料够不够、是否容易晚交。</div><div style="text-align:right;margin-top:15px"><button class="btn" onclick="closeModal()">取消</button> <button class="btn primary" onclick="saveOrder()">保存并分析</button></div></div></div>`;
+}
+function saveOrder(){let no=document.getElementById('no').value,model=document.getElementById('model').value,qty=+document.getElementById('qty').value,due=document.getElementById('due').value,priority=+document.getElementById('pri').value;data.orders.push({no,model,qty,priority,due,risk:priority>=80?'中':'低',reason:priority>=80?'需要优先安排':'暂时没有明显问题'});closeModal();dataPage();toast('订单已保存，风险已自动分析')}
+function closeModal(){document.getElementById('modal').innerHTML=''}
+function schedule(){
+content.innerHTML=hero('智能排程','你可以自己决定什么最重要，系统会按照你的选择生成生产安排。')+
+`<div class="grid3"><div class="card"><div class="title"><b>① 选择方向</b></div><div class="strategy">${['交付优先','成本优先','产量优先','综合考虑'].map(s=>`<button class="${data.strategy===s?'on':''}" onclick="setStrategy('${s}')">${s}</button>`).join('')}</div><div class="notice" style="margin-top:12px">${strategyText()}</div></div>
+<div class="card"><div class="title"><b>② 调整重要程度</b><span class="sub">0 - 100</span></div><div class="weights">${weightRow('按时交付','delivery')}${weightRow('少花成本','cost')}${weightRow('提高设备使用','capacity')}${weightRow('材料充足','material')}</div></div>
+<div class="card"><div class="title"><b>③ 当前目标</b></div><div style="font-size:25px;font-weight:800">${data.strategy}</div><p class="sub">点击“生成方案”，系统会根据订单、设备、材料和交付时间一起计算。</p><button class="btn primary" onclick="generatePlan()">生成推荐方案</button></div></div>
+<div class="card section"><div class="title"><b>当前排程方案</b><span class="pill">推荐</span></div><div class="schedule" id="scheduleGrid">${scheduleRows()}</div></div>
+<div class="grid4 section">${metric('预计按时交付','94.1%','推荐方案')}${metric('设备利用率','87.3%','提高 2.7%')}${metric('预计延期订单','1 个','减少 1 个')}${metric('预计节省','¥7,200','每天')}</div>`;
+}
+function strategyText(){return {'交付优先':'系统会优先保证快到交付时间的订单。','成本优先':'系统会尽量减少设备切换和额外生产成本。','产量优先':'系统会尽量让设备保持高效率运行。','综合考虑':'系统同时考虑交付、成本、设备和材料。'}[data.strategy]}
+function weightRow(label,key){return `<div class="weight"><span>${label}</span><input type="range" min="0" max="100" value="${data.weights[key]}" oninput="data.weights.${key}=+this.value;this.nextElementSibling.textContent=this.value"><b>${data.weights[key]}</b></div>`}
+function setStrategy(s){data.strategy=s;let presets={交付优先:[60,15,15,10],成本优先:[20,55,15,10],产量优先:[20,15,55,10],综合考虑:[40,25,20,15]}[s];['delivery','cost','capacity','material'].forEach((k,i)=>data.weights[k]=presets[i]);schedule();toast('已切换为'+s)}
+function scheduleRows(){return [['M01',[['暂停','j3',18]]],['M02',[['订单1001','j1',43],['订单1004','j2',28]]],['M03',[['订单1002','j2',35],['订单1003','j3',42]]],['M04',[['订单1003','j4',45]]],['M05',[['订单1001','j1',38],['订单1002','j3',32]]]].map(r=>`<div class="machine">${r[0]}</div><div class="track">${r[1].map(j=>`<div class="job ${j[1]}" style="width:${j[2]}%">${j[0]}</div>`).join('')}</div>`).join('')}
+function generatePlan(){document.getElementById('scheduleGrid').innerHTML=scheduleRows();toast('已根据当前重要程度生成推荐方案')}
+function anomaly(){
+content.innerHTML=hero('异常分析','发现订单有可能晚交时，系统会告诉你为什么，并给出处理方法。','自动检查')+
+`<div class="grid3"><div class="card"><div class="title"><b>订单 1001</b><span class="tag red">高风险</span></div><div class="analysis">
+<div class="reason"><b>原因 1：M01 故障</b><p>M01 今天上午停机，影响了电动 SUV 的生产。</p></div>
+<div class="reason"><b>原因 2：同类型订单冲突</b><p>订单 1001 和 1004 同时需要相同设备。</p></div>
+<div class="solution"><b>建议</b><p>把 1001 的一部分任务转给 M02，并把 1004 延后到 16:00 后生产。</p><button class="btn primary" onclick="applyFix()">应用这个调整</button></div></div></div>
+<div class="card"><div class="title"><b>订单 1002</b><span class="tag amber">中风险</span></div><div class="analysis">
+<div class="reason"><b>原因：电池包库存不足</b><p>现有 180 套，但今天预计需要 210 套。</p></div>
+<div class="solution"><b>建议</b><p>优先保证高重要程度订单，同时把 30 套电池包的补货提前。</p></div></div></div>
+<div class="card"><div class="title"><b>调整后</b><span class="tag">预计改善</span></div><div class="metric"><small>订单 1001 风险</small><strong>高 → 低</strong><span class="sub good">预计按时交付提高到 96%</span></div><div class="metric" style="margin-top:14px"><small>订单 1002 风险</small><strong>中 → 低</strong><span class="sub good">补货后基本不会晚交</span></div></div></div>`;
+}
+function applyFix(){toast('已应用调整，延期风险已降低');page(3)}
+function daily(){
+content.innerHTML=hero('每日分析','系统每天帮你找出生产效率变化的原因，让你知道哪里需要改。','今天')+
+`<div class="grid4">${metric('M01 利用率','48%','↓ 比昨天低 18%','bad')}${metric('M02 利用率','91%','↑ 比昨天高 5%')}${metric('M03 利用率','62%','↓ 比昨天低 9%','warn')}${metric('整体利用率','84.6%','↑ 比昨天高 5.2%')}</div>
+<div class="grid3 section"><div class="card"><div class="title"><b>为什么 M01 下降？</b><span class="tag red">已找到原因</span></div><div class="chart">${[88,90,87,86,42,20,48].map(x=>`<div class="bar" style="height:${x*1.55}px"></div>`).join('')}</div><div class="reason"><b>主要原因：10:00 - 12:00 设备故障</b><p>这两个小时没有生产，直接拉低了今天的利用率。</p></div><div class="solution"><b>建议</b><p>把上午的部分订单提前分给 M02，并把 M01 的检查安排到非生产时间。</p></div></div>
+<div class="card"><div class="title"><b>为什么 M03 下降？</b><span class="tag amber">材料问题</span></div><div class="reason"><b>09:30 - 11:00 材料供应慢</b><p>设备等待材料，约 1.5 小时没有满负荷生产。</p></div><div class="solution"><b>建议</b><p>每天 09:00 前把当天需要的材料送到设备旁边。</p></div></div>
+<div class="card"><div class="title"><b>今天总结</b></div><div class="notice">今天整体生产正常。主要影响来自 <b>M01 故障</b> 和 <b>M03 材料等待</b>。如果按建议调整，预计明天整体设备利用率可以达到 <b class="good">89%+</b>。</div></div></div>`;
+}
+function copilot(){
+content.innerHTML=hero('AI 助手','直接说你想做什么。我会先看数据，再调用生产安排，最后告诉你结果。','可以直接说话')+
+`<div class="grid3" style="grid-template-columns:1.55fr 1fr"><div class="card chat"><div id="messages" class="messages"><div class="bubble">你好，我可以帮你处理生产问题。<br><br>例如：<b>“1号机器坏了，明天中午才能修好，帮我重新安排生产计划。”</b></div></div><div class="inputbar"><input id="q" placeholder="直接输入生产问题..."><button class="btn primary" onclick="ask()">发送</button></div></div>
+<div class="card"><div class="title"><b>我会这样处理</b></div><div class="steps">${['理解你的话','看机器','看订单','看材料','重新安排','告诉你结果'].map((s,i)=>`<div class="step ${i===0?'active':''}">${i+1}<br>${s}</div>`).join('')}</div><div class="notice" style="margin-top:12px">你不需要学习指令，用平时说话的方式告诉我就可以。</div><div class="advice"><b>还能问我</b><p>“为什么今天 M01 利用率这么低？”<br>“哪些订单最容易晚交？”<br>“如果 M03 停 4 小时怎么办？”</p></div></div></div>`;
+}
+function ask(){
+let q=document.getElementById('q'),text=q.value.trim();if(!text)return;let m=document.getElementById('messages');m.innerHTML+=`<div class="bubble me">${text}</div>`;m.innerHTML+=`<div class="bubble"><div class="steps">${['理解任务','看机器','看订单','看材料','重新安排','评估结果'].map((s,i)=>`<div class="step active">${i+1}<br>${s}</div>`).join('')}</div><br><b>正在分析...</b></div>`;q.value='';
+setTimeout(()=>{let result=(text.includes('坏')||text.includes('故障'))?'我检查了设备、订单和材料。M01 故障会影响订单 1001 和 1004。我建议先把 1001 转到 M02，1004 放到 M05。预计按时交付率可以从 88% 提高到 95%。':'我检查了今天的数据。现在最需要关注的是订单 1001 和 1004。建议先安排高重要程度订单，再处理普通订单。';m.innerHTML+=`<div class="bubble">${result}<br><br><button class="btn primary" onclick="page(3)">查看新的生产安排</button></div>`;m.scrollTop=m.scrollHeight},800)}
+function toast(t){let x=document.getElementById('toast');x.textContent=t;x.className='toast';setTimeout(()=>x.className='',2200)}
+document.getElementById('dataBtn').onclick=()=>page(2);document.getElementById('aiBtn').onclick=()=>{page(6);setTimeout(()=>{document.getElementById('q').value='请帮我分析今天的生产情况';ask()},80)};page(1);
+</script>
+</body>
+</html>
